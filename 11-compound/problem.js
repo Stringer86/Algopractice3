@@ -8,8 +8,21 @@
 // npm install
 // npm test
 
-function compoundArray() {
-  //Your solution here
+function compoundArray(arr1, arr2) {
+  let arr = [];
+
+  let length = arr1.length > arr2.length ? arr1.length : arr2.length;
+
+  for (let i = 0; i < length; i++) {
+    if (arr1[i]) {
+      arr.push(arr1[i])
+    }
+    if (arr2[i]) {
+      arr.push(arr2[i])
+    }
+  }
+
+  return arr;
 }
 
 module.exports = {
