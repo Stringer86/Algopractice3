@@ -15,6 +15,11 @@ anotherParseInt('123.45') // NaN
 
 function anotherParseInt(str) {
 
+  for (let i = 0; i < str.length; i++) {
+    if (isNaN(parseInt(str[i])) && i !== 0) return NaN;
+  }
+
+  return parseInt(str);
 }
 
 
