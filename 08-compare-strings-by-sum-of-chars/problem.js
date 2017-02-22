@@ -28,6 +28,27 @@
 
 
 function compare(s1, s2) {
+  if (s1 === null || s2 === null) return true;
+
+  if (s1.length === 0 || s2.length === 0) return true;
+
+  let sum1 = 0;
+  let sum2 = 0;
+  let str1 = s1.toUpperCase();
+  let str2 = s2.toUpperCase();
+
+  let length = s1.length > s2.length ? s1.length : s2.length;
+
+  for (let i = 0; i < length; i++) {
+    if (str1[i]) {
+      sum1 += str1[i].charCodeAt()
+    }
+    if (str2[i]) {
+      sum2 += str2[i].charCodeAt();
+    }
+  }
+
+  return sum1 === sum2;
 
 }
 

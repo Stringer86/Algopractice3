@@ -21,6 +21,7 @@ const diagonals = function (matrix) {
 
   return sum;
 }
+
 module.exports = {
   diagonals: diagonals
 };
