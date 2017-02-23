@@ -22,8 +22,21 @@ const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('./data.json'))
 
 const spellWithChemestry = function(str) {
+  let output = ''
 
-
+  for (let i = 0; i < str.length; i++) {
+    for (let y = 0; y < data.length; y++) {
+      if (str[i].toUpperCase() + str[i + 1] === data[y].symbol) {
+        output += data[y].symbol;
+        i++;
+        break;
+      } else if (str[i].toUpperCase() === data[y].symbol) {
+        output += data[y].symbol;
+        break;
+      }
+    }
+  }
+  return output;
 }
 
 module.exports = spellWithChemestry;
